@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Metro/Scenes/Bootstrap.unity
     guid: e00f706fa94b46849814e8cd1b5778c9
   - enabled: 0
@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Metro/Scenes/Game.unity
     guid: 6053c8e6f3e2bc843bdf653253fb30ed
+  - enabled: 1
+    path: Assets/Metro/Scenes/Art.unity
+    guid: ca85319c5238ba9418dcf6d6c452169f
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 21344e89c7fb15e4a83dab737342dd92, type: 2}
