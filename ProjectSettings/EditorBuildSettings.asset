@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Metro/Scenes/Bootstrap.unity
     guid: e00f706fa94b46849814e8cd1b5778c9
   - enabled: 0
