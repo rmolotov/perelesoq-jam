@@ -68,9 +68,9 @@ namespace Metro.Infrastructure.States
         public void Exit()
         {
             // _curtain.Hide(0.5f);
-            _levelFactory.CleanUp();
-            _playerFactory.CleanUp();
-            _enemyFactory.CleanUp();
+            // _levelFactory.CleanUp();
+            // _playerFactory.CleanUp();
+            // _enemyFactory.CleanUp();
             _pendingLevelStaticData = null;
         }
 
