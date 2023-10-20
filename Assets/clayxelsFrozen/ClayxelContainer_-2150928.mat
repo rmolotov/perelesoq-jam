@@ -30,13 +30,13 @@ Material:
     - _ClayxelSize: 1
     - _Cutoff: 1
     - _EnableSplats: 0
-    - _Metallic: 0.5
+    - _Metallic: 0
     - _NormalOrient: 1
     - _RoughBump: 0
     - _RoughColor: 0
     - _RoughOrient: 0
     - _RoughTwist: 0
-    - _Smoothness: 0.5
+    - _Smoothness: 0.367
     - _Twist: 0
     m_Colors:
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
