@@ -69,6 +69,8 @@ namespace Metro.Infrastructure.States
         {
             // _curtain.Hide(0.5f);
             _levelFactory.CleanUp();
+            _playerFactory.CleanUp();
+            _enemyFactory.CleanUp();
             _pendingLevelStaticData = null;
         }
 
@@ -93,6 +95,9 @@ namespace Metro.Infrastructure.States
         private async Task InitGameWold()
         {
             var train = await _levelFactory.Create(_pendingLevelStaticData.Length);
+
+            foreach (var enemyStaticData in _pendingLevelStaticData.Enemies)
+                await _enemyFactory.Create(enemyStaticData);
         }
 
         private async Task InitUI()
