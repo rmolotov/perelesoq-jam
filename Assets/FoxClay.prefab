@@ -1,60 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &450875576116815889
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8959755665981929498}
-  - component: {fileID: 3514341540811486212}
-  m_Layer: 0
-  m_Name: clay_sphere-
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8959755665981929498
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450875576116815889}
-  m_LocalRotation: {x: 0.17771935, y: -0.021117097, z: 0.55087364, w: -0.8151737}
-  m_LocalPosition: {x: 0.6926471, y: -0.41759107, z: -0.1880204}
-  m_LocalScale: {x: 3.4828851, y: 3.0706835, z: 1.9458984}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7337578104783129467}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -164.545, y: 193.82, z: 110.016}
---- !u!114 &3514341540811486212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450875576116815889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7abbfd96705db9d42bf2ff005c1a5a71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blend: -0.074
-  color: {r: 0.3773585, g: 0.23738429, b: 0.21146315, a: 1}
-  attrs: {x: 0.176, y: 0, z: 0.42599997, w: 0}
-  attrs2: {x: 0, y: 0, z: 0, w: 0}
-  primitiveType: 1
-  mode: 0
-  offsetter: {fileID: 0}
-  splinePoints: []
-  clayObjectId: 1
-  numSolids: 1
-  splineSubdiv: 3
 --- !u!1 &1000841575367072101
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +215,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0b9ed5a53b44ebd43bf333fd9b4c1f5a, type: 2}
+  - {fileID: 2100000, guid: 30fc5a42c8a8ba347a84e4b5960dc1d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -292,77 +237,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1088948134536754224
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7337578104783129467}
-  - component: {fileID: 2050531287340343410}
-  m_Layer: 0
-  m_Name: Moon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &7337578104783129467
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088948134536754224}
-  m_LocalRotation: {x: 0.3571604, y: -0.8008429, z: 0.20562488, w: 0.43451768}
-  m_LocalPosition: {x: -0.68, y: -0.3, z: 0.09}
-  m_LocalScale: {x: 0.92929, y: 0.92929, z: 0.92929}
-  m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 6148946086937051236}
-  - {fileID: 8959755665981929498}
-  - {fileID: 6038455488160553091}
-  m_Father: {fileID: 3758225090673308577}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 39.772, y: -134.407, z: -30.783}
---- !u!114 &2050531287340343410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088948134536754224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf51d6fd97243134dbf9d48bd3107215, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  needsUpdate: 0
-  customMaterial: {fileID: 0}
-  clayxelDetail: 88
-  chunksX: 1
-  chunksY: 1
-  chunksZ: 1
-  material: {fileID: 0}
-  castShadows: 1
-  receiveShadows: 1
-  storeAssetPath: ClayxelContainer
-  frozen: 0
-  clayObjectsOrderLocked: 1
-  autoBounds: 1
-  renderMode: 1
-  instanceOf: {fileID: 0}
-  interactive: 0
-  meshNormalSmooth: 180
-  meshVoxelize: 0
-  microvoxelSplatsQuality: 1
-  microvoxelRayIterations: 1
-  autoBoundsLimit: 1
-  autoRigEnabled: 0
-  retopoMaxVerts: -1
-  retopoApplied: 0
 --- !u!1 &1459499680565859077
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +548,7 @@ Transform:
   - {fileID: 4264025222103020958}
   - {fileID: 4589753399508805474}
   m_Father: {fileID: 3758225090673308577}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3878484809840773
 MonoBehaviour:
@@ -740,7 +614,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 788b721dc149b024b9c449b96454a415, type: 2}
+  - {fileID: 2100000, guid: 30fc5a42c8a8ba347a84e4b5960dc1d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -794,7 +668,6 @@ Transform:
   - {fileID: 1338087118024208383}
   - {fileID: 2901976787548813293}
   - {fileID: 5541189194252903550}
-  - {fileID: 7337578104783129467}
   - {fileID: 3653472560146822276}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -852,116 +725,6 @@ MonoBehaviour:
   offsetter: {fileID: 0}
   splinePoints: []
   clayObjectId: 1
-  numSolids: 1
-  splineSubdiv: 3
---- !u!1 &4080285829200508804
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6148946086937051236}
-  - component: {fileID: 526153467260819167}
-  m_Layer: 0
-  m_Name: clay_sphere+
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6148946086937051236
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4080285829200508804}
-  m_LocalRotation: {x: 0.17771935, y: -0.021117097, z: 0.55087364, w: -0.8151737}
-  m_LocalPosition: {x: -0.17526913, y: -0.7392081, z: 0.11820028}
-  m_LocalScale: {x: 0.7694935, y: 2.1524303, z: 2.2992616}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7337578104783129467}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -164.545, y: 193.82, z: 110.016}
---- !u!114 &526153467260819167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4080285829200508804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7abbfd96705db9d42bf2ff005c1a5a71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blend: 0
-  color: {r: 0.3773585, g: 0.23738429, b: 0.21146315, a: 1}
-  attrs: {x: 0.176, y: 0, z: 0.42599997, w: 0}
-  attrs2: {x: 0, y: 0, z: 0, w: 0}
-  primitiveType: 1
-  mode: 0
-  offsetter: {fileID: 0}
-  splinePoints: []
-  clayObjectId: 0
-  numSolids: 1
-  splineSubdiv: 3
---- !u!1 &4142135371964382878
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6038455488160553091}
-  - component: {fileID: 1536467363011013240}
-  m_Layer: 0
-  m_Name: clay_cylinder+
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &6038455488160553091
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4142135371964382878}
-  m_LocalRotation: {x: 0.07352642, y: -0.09582154, z: 0.6043047, w: 0.78754556}
-  m_LocalPosition: {x: 0.7062699, y: -1.0525, z: -0.015518}
-  m_LocalScale: {x: 0.45985526, y: 0.45985526, z: 0.45985526}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7337578104783129467}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 13.393, y: -3.658, z: 74.57}
---- !u!114 &1536467363011013240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4142135371964382878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7abbfd96705db9d42bf2ff005c1a5a71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blend: 0
-  color: {r: 0.87058824, g: 0.50980395, b: 0.39215687, a: 1}
-  attrs: {x: 0.21549998, y: 0.1894, z: 0.33129996, w: 0}
-  attrs2: {x: 0, y: 0, z: 0, w: 0}
-  primitiveType: 2
-  mode: 0
-  offsetter: {fileID: 0}
-  splinePoints: []
-  clayObjectId: 2
   numSolids: 1
   splineSubdiv: 3
 --- !u!1 &4298225761404529733
@@ -1113,7 +876,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d916ef048bbcc74b80d12a41235a90b, type: 2}
+  - {fileID: 2100000, guid: 30fc5a42c8a8ba347a84e4b5960dc1d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1410,7 +1173,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 516702e26c60c604d86b2de5b75c4b3c, type: 2}
+  - {fileID: 2100000, guid: 30fc5a42c8a8ba347a84e4b5960dc1d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1697,7 +1460,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e4e88e87950c97b45a0bbab03691e258, type: 2}
+  - {fileID: 2100000, guid: 30fc5a42c8a8ba347a84e4b5960dc1d7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
