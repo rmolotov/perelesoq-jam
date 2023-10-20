@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Gameplay
+  m_Name: Enemies
   m_EditorClassIdentifier: 
-  m_GroupName: Gameplay
+  m_GroupName: Enemies
   m_Data:
     m_SerializedData: []
-  m_GUID: 08236d77ee5ae704ebe0057e8435bb25
+  m_GUID: 4a8a88f47fc4f6744a9efe0219b7b20f
   m_SerializeEntries:
-  - m_GUID: 12466f2fbcd419a4981f53abaedf9189
-    m_Address: PlayerPrefab
+  - m_GUID: ceed6b09da836e448825e6c23396d1bc
+    m_Address: EnemyHeavy
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 6b1e629b6edfaa1418fe4fac28b9df0f
-    m_Address: TrainModulePrefab
+  - m_GUID: 9396ee6d5bf70724fa85bccbbeedac0d
+    m_Address: EnemyLight
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 70332cac57999ae46b9105d367f1047c
-    m_Address: TrainBasePrefab
+  - m_GUID: 9525f069cdc9c3242b6121484cc77552
+    m_Address: EnemyMoving
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0b036216eeaed564583c592231d396b1, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: d3e0f13488db4444e91cba275e8a04ee, type: 2}
-    - {fileID: 11400000, guid: 6a797da278635e146b7890177f623214, type: 2}
+    - {fileID: 11400000, guid: e26e2e8a6da41fa4a828b62c8f07b760, type: 2}
+    - {fileID: 11400000, guid: 5f9d5ec12323c4e47b07866efddb8cf9, type: 2}

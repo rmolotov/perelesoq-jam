@@ -20,13 +20,29 @@ MonoBehaviour:
     Length: 5
     Enemies:
     - EnemyType: 0
-      Speed: 0
+      Speed: 5
       SpawnSide: 0
+      Position: 1
+    - EnemyType: 1
+      Speed: 5
+      SpawnSide: 1
       Position: 3
     - EnemyType: 0
-      Speed: 0
+      Speed: 5
       SpawnSide: 1
-      Position: 2
+      Position: 5
+    - EnemyType: 0
+      Speed: 5
+      SpawnSide: 0
+      Position: 5
+    - EnemyType: 1
+      Speed: 5
+      SpawnSide: 1
+      Position: 8
+    - EnemyType: 2
+      Speed: 5
+      SpawnSide: 1
+      Position: 10
   - Key: lvl2
     Title: "\u041F\u043E\u043B\u043D\u043E\u0447\u043D\u044B\u0439 \u044D\u043A\u0441\u043F\u0440\u0435\u0441\u0441"
     Description: 

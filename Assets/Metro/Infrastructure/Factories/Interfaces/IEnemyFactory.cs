@@ -8,6 +8,6 @@ namespace Metro.Infrastructure.Factories.Interfaces
     {
         Task WarmUp();
         void CleanUp();
-        Task<GameObject> Create(EnemyType enemyType, Vector2 at);
+        Task<GameObject> Create(EnemyStaticData enemyStaticData);
     }
 }

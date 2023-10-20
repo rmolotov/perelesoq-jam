@@ -48,7 +48,7 @@ namespace Metro.Infrastructure.Factories
             for (var i = 0; i < length; i++)
                 Object.Instantiate(
                     modulePrefab,
-                    train.transform.position + Vector3.forward * (i * ModuleOffset + (ModuleOffset * 0.5f)),
+                    train.transform.position + Vector3.forward * (i * ModuleOffset),
                     Quaternion.identity,
                     train.transform);
 
