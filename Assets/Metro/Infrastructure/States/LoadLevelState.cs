@@ -12,6 +12,7 @@ using Metro.Infrastructure.States.Interfaces;
 // using Metro.Gameplay.Player;
 // using Metro.Gameplay.Camera.CinemachineExtensions;
 using Metro.StaticData;
+using Metro.StaticData.Levels;
 
 namespace Metro.Infrastructure.States
 {
@@ -19,8 +20,12 @@ namespace Metro.Infrastructure.States
     {
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
-        private readonly IPlayerFactory _playerFactory;
+        
         private readonly IUIFactory _uiFactory;
+        private readonly ILevelFactory _levelFactory;
+        private readonly IPlayerFactory _playerFactory;
+        private readonly IEnemyFactory _enemyFactory;
+        
         // private readonly ICameraService _cameraService;
         // private readonly ICurtainService _curtain;
 
@@ -30,31 +35,40 @@ namespace Metro.Infrastructure.States
             GameStateMachine gameStateMachine,
             SceneLoader sceneLoader,
             IPlayerFactory playerFactory,
+            ILevelFactory levelFactory,
+            IEnemyFactory enemyFactory,
             IUIFactory uiFactory)
         {
             _stateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
-            _playerFactory = playerFactory;
+            
             _uiFactory = uiFactory;
+            _levelFactory = levelFactory;
+            _playerFactory = playerFactory;
+            _enemyFactory = enemyFactory;
         }
 
         private Canvas _uiRoot;
-        
+
         public async void Enter(LevelStaticData levelStaticData)
         {
             _pendingLevelStaticData = levelStaticData;
             
             // _curtain.Show(0.5f);
-            
-            await _playerFactory.WarmUp();
-            // await _stageFactory.WarmUp();
 
+            await Task.WhenAll(
+                _levelFactory.WarmUp(),
+                _playerFactory.WarmUp(),
+                _enemyFactory.WarmUp()
+            );
+            
             var sceneInstance = await _sceneLoader.Load(SceneName.Game, OnLoaded);
         }
 
         public void Exit()
         {
             // _curtain.Hide(0.5f);
+            _levelFactory.CleanUp();
             _pendingLevelStaticData = null;
         }
 
@@ -78,7 +92,7 @@ namespace Metro.Infrastructure.States
 
         private async Task InitGameWold()
         {
-
+            var train = await _levelFactory.Create(_pendingLevelStaticData.Length);
         }
 
         private async Task InitUI()
