@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Metro.Infrastructure.AssetManagement;
 using Metro.Services.Logging;
 using Metro.StaticData;
+using Metro.StaticData.Levels;
 using Metro.StaticData.Player;
 
 namespace Metro.Services.StaticData

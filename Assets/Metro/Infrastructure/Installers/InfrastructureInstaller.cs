@@ -50,10 +50,12 @@ namespace Metro.Infrastructure.Installers
 
         private void BindFactories()
         {
-            Container.Bind<IPlayerFactory>().To<PlayerFactory>().AsSingle();
             Container.BindInterfacesAndSelfTo<StateFactory>().AsSingle();
             Container.Bind<IUIFactory>().To<UIFactory>().AsSingle();
-            // Container.Bind<ILevelFactory>().To<LevelFactory>().AsSingle();
+            
+            Container.Bind<ILevelFactory>().To<LevelFactory>().AsSingle();
+            Container.Bind<IPlayerFactory>().To<PlayerFactory>().AsSingle();
+            Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
         }
     }
 }
