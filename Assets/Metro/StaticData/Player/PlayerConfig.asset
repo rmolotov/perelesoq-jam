@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: PlayerConfig
   m_EditorClassIdentifier: 
   MaxHealth: 100
-  MaxSpeed: 10
+  MinSpeed: 1
+  MaxSpeed: 5
+  Accelaration: 1

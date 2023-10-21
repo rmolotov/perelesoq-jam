@@ -1,6 +1,7 @@
 ﻿using Metro.Gameplay.Enemies;
 using Metro.Services.Input;
 using Metro.Services.Logging;
+using Metro.StaticData.Player;
 using UnityEngine;
 using Zenject;
 
@@ -11,6 +12,9 @@ namespace Metro.Gameplay.Player
         private IInputService _inputService;
         private ILoggingService _logger;
 
+        [SerializeField] private PlayerMove moveComponent;
+        
+
         [Inject]
         private void Construct(IInputService inputService, ILoggingService logger)
         {
@@ -18,11 +22,17 @@ namespace Metro.Gameplay.Player
             _logger = logger;
         }
 
-        private void Start() => 
+        public void Initialize(PlayerStaticData config)
+        {
             _inputService.Tap += HandleTap;
+            
+            moveComponent?.Initialize(config);
+        }
 
         private void OnDestroy() => 
             _inputService.Tap -= HandleTap;
+
+        
 
         private void HandleTap(Vector2 value)
         {
