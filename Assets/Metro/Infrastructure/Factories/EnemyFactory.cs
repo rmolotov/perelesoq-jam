@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using Metro.Gameplay.Enemies;
 using Metro.Infrastructure.AssetManagement;
 using Metro.Infrastructure.Factories.Interfaces;
 using Metro.Services.StaticData;
@@ -37,15 +38,17 @@ namespace Metro.Infrastructure.Factories
                 _assetProvider.Release(key: EnemyPrefabPrefix + enemyType);
         }
 
-        public async Task<GameObject> Create(EnemyStaticData enemyStaticData)
+        public async Task<EnemyMove> Create(EnemyStaticData enemyStaticData)
         {
             var prefab = await _assetProvider.Load<GameObject>(key: EnemyPrefabPrefix + enemyStaticData.EnemyType);
             var position =
                 Vector3.forward * (enemyStaticData.Position + 0.5f) +
                 (enemyStaticData.SpawnSide == EnemySide.Right ? Vector3.right : Vector3.left) * 1.5f;
-            var enemy = Object.Instantiate(prefab, position, Quaternion.identity);
+            
+            var enemy = Object.Instantiate(prefab, position, Quaternion.identity).GetComponent<EnemyMove>();
+            enemy.Initialize(enemyStaticData);
 
-            _container.InjectGameObject(enemy);
+            _container.InjectGameObject(enemy.gameObject);
 
             return enemy;
         }

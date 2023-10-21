@@ -1,9 +1,38 @@
-﻿using UnityEngine;
+﻿using Metro.Gameplay.Enemies;
+using Metro.Services.Input;
+using Metro.Services.Logging;
+using UnityEngine;
+using Zenject;
 
 namespace Metro.Gameplay.Player
 {
     public class PlayerController : MonoBehaviour
     {
-        
+        private IInputService _inputService;
+        private ILoggingService _logger;
+
+        [Inject]
+        private void Construct(IInputService inputService, ILoggingService logger)
+        {
+            _inputService = inputService;
+            _logger = logger;
+        }
+
+        private void Start() => 
+            _inputService.Tap += HandleTap;
+
+        private void OnDestroy() => 
+            _inputService.Tap -= HandleTap;
+
+        private void HandleTap(Vector2 value)
+        {
+            // _logger.LogMessage(value.ToString(), this);
+            
+            var ray = Camera.main.ScreenPointToRay(value);
+
+            if (Physics.Raycast(ray.origin, ray.direction, out var hit, 100))
+                if (hit.collider != null && hit.collider.GetComponentInParent<EnemyMove>())
+                    hit.collider.GetComponentInParent<EnemyMove>().Tap();
+        }
     }
 }

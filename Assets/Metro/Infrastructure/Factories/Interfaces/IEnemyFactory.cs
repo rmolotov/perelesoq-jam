@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
+using Metro.Gameplay.Enemies;
 using Metro.StaticData.Enemies;
-using UnityEngine;
 
 namespace Metro.Infrastructure.Factories.Interfaces
 {
@@ -8,6 +8,6 @@ namespace Metro.Infrastructure.Factories.Interfaces
     {
         Task WarmUp();
         void CleanUp();
-        Task<GameObject> Create(EnemyStaticData enemyStaticData);
+        Task<EnemyMove> Create(EnemyStaticData enemyStaticData);
     }
 }

@@ -1,17 +1,21 @@
+using System;
 using Metro.Services.Logging;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem.EnhancedTouch;
+using Zenject;
 using static UnityEngine.InputSystem.InputAction;
+using Touch = UnityEngine.Touch;
 
 namespace Metro.Services.Input
 {
-    public class InputService : IInputService
+    public class InputService : IInputService, IInitializable, IDisposable
     {
         private PlayerControls _controls;
         private readonly ILoggingService _logger;
 
         public Vector2 Move { get; private set; }
-        public UnityAction Tap { get; set; }
+        public UnityAction<Vector2> Tap { get; set; }
 
         public InputService(ILoggingService logger)
         {
@@ -23,6 +27,8 @@ namespace Metro.Services.Input
             _controls = new PlayerControls();
             _controls.Enable();
             SubscribeOnControls(true);
+            
+            TouchSimulation.Enable();
         }
 
         public void Dispose()
@@ -50,7 +56,7 @@ namespace Metro.Services.Input
         #region Adapter methods
 
         private void OnMove(CallbackContext ctx) => Move = ctx.ReadValue<Vector2>();
-        private void OnTap(CallbackContext ctx) => Tap?.Invoke();
+        private void OnTap(CallbackContext ctx) => Tap?.Invoke(ctx.ReadValue<Vector2>());
 
         #endregion
     }

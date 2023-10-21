@@ -1,13 +1,11 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
-using Zenject;
 
 namespace Metro.Services.Input
 {
-    public interface IInputService : IInitializable, IDisposable
+    public interface IInputService
     {
         Vector2 Move { get; }
-        UnityAction Tap { get; set; }
+        UnityAction<Vector2> Tap { get; set; }
     }
 }
