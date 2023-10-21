@@ -165,7 +165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83e508f7746e6604cb5eb9df72e5b0b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.007
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 83e508f7746e6604cb5eb9df72e5b0b5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -206,10 +206,18 @@ PrefabInstance:
     - target: {fileID: -1532119727471160055, guid: 83e508f7746e6604cb5eb9df72e5b0b5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 24ebcf56836ca0f4f955a72b4deedcd4, type: 2}
+      objectReference: {fileID: 2100000, guid: 30fc5a42c8a8ba347a84e4b5960dc1d7, type: 2}
     - target: {fileID: 919132149155446097, guid: 83e508f7746e6604cb5eb9df72e5b0b5, type: 3}
       propertyPath: m_Name
       value: Bunny1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227890046326352672, guid: 83e508f7746e6604cb5eb9df72e5b0b5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1114
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227890046326352672, guid: 83e508f7746e6604cb5eb9df72e5b0b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83e508f7746e6604cb5eb9df72e5b0b5, type: 3}
