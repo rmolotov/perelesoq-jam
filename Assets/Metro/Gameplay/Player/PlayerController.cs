@@ -29,6 +29,12 @@ namespace Metro.Gameplay.Player
             moveComponent?.Initialize(config);
         }
 
+        public void Run() => 
+            moveComponent?.Run();
+
+        public void Stop() =>
+            moveComponent?.Stop();
+
         private void OnDestroy() => 
             _inputService.Tap -= HandleTap;
 

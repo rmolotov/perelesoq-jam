@@ -8,18 +8,19 @@ namespace Metro.Infrastructure.States
     public class GameLoopState : IState
     {
         private readonly GameStateMachine _stateMachine;
+        private readonly ILevelFactory _levelFactory;
         private readonly IPlayerFactory _playerFactory;
         private readonly IUIFactory _uiFactory;
         private readonly IInputService _inputService;
 
-        public GameLoopState(
-            GameStateMachine gameStateMachine,
+        public GameLoopState(GameStateMachine gameStateMachine,
             IPlayerFactory playerFactory,
+            ILevelFactory levelFactory,
             IUIFactory uiFactory,
-            IInputService inputService
-            )
+            IInputService inputService)
         {
             _stateMachine = gameStateMachine;
+            _levelFactory = levelFactory;
             _playerFactory = playerFactory;
             _uiFactory = uiFactory;
             _inputService = inputService;
@@ -27,8 +28,8 @@ namespace Metro.Infrastructure.States
 
         public void Enter()
         {
-            // _playerFactory.Player.Activate(true);
-            // SetupCursor();
+            _playerFactory.Player.Run();
+            _levelFactory.Train.Run();
         }
 
         public void Exit()
@@ -36,6 +37,7 @@ namespace Metro.Infrastructure.States
             // _playerFactory.PlayerController.Activate(false);
             
             _playerFactory.CleanUp();
+            _levelFactory.CleanUp();
             //_uiFactory.HUDController.CleanUp();
         }
 

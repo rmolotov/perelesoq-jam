@@ -2,7 +2,6 @@
 using UnityEngine;
 using JetBrains.Annotations;
 using Zenject;
-using Metro.Gameplay;
 using Metro.Gameplay.Player;
 using Metro.Infrastructure.AssetManagement;
 using Metro.Infrastructure.Factories.Interfaces;
@@ -46,14 +45,6 @@ namespace Metro.Infrastructure.Factories
             var playerGameObject = Object.Instantiate(prefab, at, Quaternion.identity);
             
             _container.InjectGameObject(playerGameObject);
-
-            // var health = hero.GetComponent<HeroHealth>();
-            // health.MaxHP = config.Voltage;
-            // health.CurrentHP.Value = health.MaxHP;
-            //
-            // var attack = hero.GetComponent<HeroAttack>();
-            // attack.AttackDamage.Value = config.Current;
-            // attack.Shield = config.Resistance;
 
             Player = playerGameObject.GetComponent<PlayerController>();
             Player.Initialize(config);

@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Metro.Gameplay.Conductor;
 using Metro.Gameplay.Train;
 using Metro.Infrastructure.AssetManagement;
 using Metro.Infrastructure.Factories.Interfaces;
@@ -12,6 +13,7 @@ namespace Metro.Infrastructure.Factories
     {
         private const string TrainBasePrefabId      = "TrainBasePrefab";
         private const string TrainModulePrefabId    = "TrainModulePrefab";
+        private const string ConductorPrefabId      = "ConductorPrefab";
         private const int ModuleOffset = 7;
 
         private readonly DiContainer _container;
@@ -24,6 +26,8 @@ namespace Metro.Infrastructure.Factories
             _assetProvider = assetProvider;
             _staticDataService = staticDataService;
         }
+
+        public TrainController Train { get; private set; }
 
         public async Task WarmUp()
         {
@@ -40,21 +44,26 @@ namespace Metro.Infrastructure.Factories
         public async Task<TrainController> Create(int length)
         {
             var prefab = await _assetProvider.Load<GameObject>(key: TrainBasePrefabId);
-            var train = Object.Instantiate(prefab).GetComponent<TrainController>();
+            Train = Object.Instantiate(prefab).GetComponent<TrainController>();
             
-            _container.Inject(train);
+            _container.Inject(Train);
 
             var modulePrefab = await _assetProvider.Load<GameObject>(key: TrainModulePrefabId);
             for (var i = 0; i < length; i++)
                 Object.Instantiate(
                     modulePrefab,
-                    train.transform.position + Vector3.forward * (i * ModuleOffset),
+                    Train.transform.position + Vector3.forward * (i * ModuleOffset),
                     Quaternion.identity,
-                    train.transform);
-
-            train.Initialize(length * ModuleOffset);
+                    Train.transform);
             
-            return train;
+            var conductorPrefab = await _assetProvider.Load<GameObject>(key: ConductorPrefabId);
+            var conductor = Object.Instantiate(conductorPrefab).GetComponent<ConductorMove>();
+            
+            _container.InjectGameObject(conductor.gameObject);
+
+            Train.Initialize(length * ModuleOffset, conductor);
+            
+            return Train;
         }
     }
 }

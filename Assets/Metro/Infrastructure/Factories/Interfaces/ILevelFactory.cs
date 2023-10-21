@@ -5,6 +5,8 @@ namespace Metro.Infrastructure.Factories.Interfaces
 {
     public interface ILevelFactory
     {
+        TrainController Train { get; }
+        
         Task WarmUp();
         void CleanUp();
         

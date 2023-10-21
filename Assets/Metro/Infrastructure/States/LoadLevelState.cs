@@ -1,17 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Metro.Gameplay;
+﻿using System.Threading.Tasks;
 using Metro.Gameplay.Player;
 using UnityEngine;
-using UnityEngine.ResourceManagement.ResourceProviders;
 using Metro.Infrastructure.Factories.Interfaces;
 using Metro.Infrastructure.SceneManagement;
 using Metro.Infrastructure.States.Interfaces;
-// using Metro.Services.Camera;
-// using Metro.Services.Curtain;
-// using Metro.Gameplay.Player;
-// using Metro.Gameplay.Camera.CinemachineExtensions;
-using Metro.StaticData;
 using Metro.StaticData.Levels;
 
 namespace Metro.Infrastructure.States

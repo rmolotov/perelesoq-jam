@@ -6,6 +6,8 @@ namespace Metro.Gameplay.Player
     public class PlayerMove : MonoBehaviour
     {
         private float _currentSpeed, _minSpeed, _maxSpeed, _acceleration;
+        private bool _running;
+
 
         public void Initialize(PlayerStaticData config)
         {
@@ -15,8 +17,17 @@ namespace Metro.Gameplay.Player
             _acceleration = config.Accelaration;
         }
 
-        private void Update() => 
-            Move();
+        private void Update()
+        {
+            if (_running)
+                Move();
+        }
+        
+        public void Run() => 
+            _running = true;
+
+        public void Stop() => 
+            _running = false;
 
         public void Collide()
         {

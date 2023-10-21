@@ -29,6 +29,10 @@ MonoBehaviour:
     m_Address: TrainBasePrefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 4f84ff42f557d0d4ebb9ee71b93f2719
+    m_Address: ConductorPrefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0b036216eeaed564583c592231d396b1, type: 2}
   m_SchemaSet:
