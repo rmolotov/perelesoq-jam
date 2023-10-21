@@ -11,6 +11,8 @@ namespace Metro.Gameplay.Train
         [SerializeField] private Transform startModule;
         [SerializeField] private Transform endModule;
         
+        [SerializeField] private Animator animator;
+        
         [SerializeField] private float penaltyDistance = 0.5f;
         
         private ConductorController _conductor;
@@ -38,6 +40,7 @@ namespace Metro.Gameplay.Train
             if (_playerFactory.Player != null && _playerFactory.Player.transform.position.z > endModule.transform.position.z)
             {
                 _conductor.Stop(true);
+                animator.SetTrigger("close");
             }
         }
 
