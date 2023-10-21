@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 5608303997030469157}
   - component: {fileID: 1069728447317179784}
   - component: {fileID: 6598593661029071382}
+  - component: {fileID: 7437143827847196372}
   m_Layer: 5
   m_Name: LevelCardPrefab
   m_TagString: Untagged
@@ -282,7 +283,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 71d542a193a81df46aa8970e13da67b6, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -356,6 +357,19 @@ MonoBehaviour:
   cardDescription: {fileID: 3653553811016951883}
   selectToggle: {fileID: 1069728447317179784}
   cardImage: {fileID: 0}
+--- !u!114 &7437143827847196372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6135954067854350838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1 &8464189415605231575
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,10 +436,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: title text
+  m_text: "\u0431\u0438\u043B\u0435\u0442 \u0432 \u0434\u0443\u0440\u043A\u0443"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b57596f6b69231e4691c6a7d521b9c06, type: 2}
+  m_sharedMaterial: {fileID: -6150562675562126744, guid: b57596f6b69231e4691c6a7d521b9c06, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -449,8 +463,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
