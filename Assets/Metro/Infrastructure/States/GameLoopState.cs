@@ -28,7 +28,6 @@ namespace Metro.Infrastructure.States
 
         public void Enter()
         {
-            _playerFactory.Player.Run();
             _levelFactory.Train.Run();
         }
 

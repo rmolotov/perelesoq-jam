@@ -452,6 +452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5151017703797318237}
+  - component: {fileID: 7210183078248389119}
   - component: {fileID: 8873223280737135020}
   - component: {fileID: 4991436279268901942}
   - component: {fileID: 4729719064678437139}
@@ -481,6 +482,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7210183078248389119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3776162935572382217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d5c6193c72940d0afba5866433de162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveComponent: {fileID: 8873223280737135020}
+  animator: {fileID: 2519854183980604286}
 --- !u!114 &8873223280737135020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,8 +511,6 @@ MonoBehaviour:
   minSpeed: 1
   maxSpeed: 5
   acceleration: 2
-  penaltyDistance: 0.5
-  animator: {fileID: 2519854183980604286}
 --- !u!114 &4991436279268901942
 MonoBehaviour:
   m_ObjectHideFlags: 0

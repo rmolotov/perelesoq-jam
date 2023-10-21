@@ -10,10 +10,6 @@ namespace Metro.Gameplay.Conductor
         [SerializeField] private float maxSpeed;
         [SerializeField] private float acceleration;
 
-        [SerializeField] private float penaltyDistance;
-
-        [SerializeField] private Animator animator;
-
         private IPlayerFactory _playerFactory;
         private float _currentSpeed;
         private bool _running;
@@ -26,28 +22,15 @@ namespace Metro.Gameplay.Conductor
 
         private void Update()
         {
-            if (_running)
-            {
+            if (_running) 
                 Move();
-                
-                if (Vector3.Distance(transform.position, _playerFactory.Player.transform.position) <= penaltyDistance)
-                {
-                    Stop();
-                    _playerFactory.Player.Stop();
-                }
-            }
         }
 
-        public void Run()
-        {
+        public void Run() => 
             _running = true;
-        }
 
-        public void Stop()
-        {
+        public void Stop() => 
             _running = false;
-            animator.SetTrigger("kill");
-        }
 
         public void Collide()
         {

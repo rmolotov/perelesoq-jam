@@ -57,7 +57,7 @@ namespace Metro.Infrastructure.Factories
                     Train.transform);
             
             var conductorPrefab = await _assetProvider.Load<GameObject>(key: ConductorPrefabId);
-            var conductor = Object.Instantiate(conductorPrefab).GetComponent<ConductorMove>();
+            var conductor = Object.Instantiate(conductorPrefab).GetComponent<ConductorController>();
             
             _container.InjectGameObject(conductor.gameObject);
 
