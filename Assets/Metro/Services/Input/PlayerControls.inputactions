@@ -16,12 +16,12 @@
                 },
                 {
                     "name": "Tap",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "4e7f3408-710a-4dc3-91b9-22aae346382e",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -38,8 +38,8 @@
                 },
                 {
                     "name": "",
-                    "id": "4f003657-f92c-4037-85f5-70ead219fe5d",
-                    "path": "",
+                    "id": "09bf7a8f-0cb6-43c4-a3cc-d2ca65d88d3e",
+                    "path": "<Touchscreen>/primaryTouch/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
