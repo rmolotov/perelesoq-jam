@@ -2,12 +2,16 @@ using DG.Tweening;
 using UnityEngine;
 using Metro.StaticData.Enemies;
 using Sirenix.OdinInspector;
+using FMODUnity;
+using FMOD.Studio;
 
 namespace Metro.Gameplay.Enemies
 {
     public class EnemyMove : MonoBehaviour
     {
         [SerializeField] private Collider collider;
+
+        [SerializeField] private EventReference moveEvent;
 
         private EnemyStaticData _staticData;
         private bool _moving = false;
@@ -38,6 +42,11 @@ namespace Metro.Gameplay.Enemies
                 {
                     _moving = false;
                     _inCenter = !_inCenter;
+                    
+                    EventInstance _moveInst = RuntimeManager.CreateInstance(moveEvent);
+                    RuntimeManager.AttachInstanceToGameObject(_moveInst, transform);
+                    _moveInst.start();
+                    _moveInst.release();
                 })
                 .Play();
 
