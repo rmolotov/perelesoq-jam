@@ -42,19 +42,19 @@ MonoBehaviour:
     Length: 3
     Enemies:
     - EnemyType: 0
-      Speed: 0
+      Speed: 5
       SpawnSide: 0
       Position: 12
     - EnemyType: 0
-      Speed: 0
+      Speed: 5
       SpawnSide: 1
       Position: 12
     - EnemyType: 0
-      Speed: 0
+      Speed: 5
       SpawnSide: 0
       Position: 15
     - EnemyType: 1
-      Speed: 0
+      Speed: 5
       SpawnSide: 1
       Position: 17
   - Key: lvl3
