@@ -6,6 +6,9 @@ namespace Metro.StaticData.Player
     public class PlayerStaticData : ScriptableObject
     {
         public int MaxHealth;
+
+        public int MinSpeed;
         public int MaxSpeed;
+        public float Accelaration;
     }
 }

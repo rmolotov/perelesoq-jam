@@ -55,8 +55,10 @@ namespace Metro.Infrastructure.Factories
             // attack.AttackDamage.Value = config.Current;
             // attack.Shield = config.Resistance;
 
-            
-            return Player = playerGameObject.GetComponent<PlayerController>();
+            Player = playerGameObject.GetComponent<PlayerController>();
+            Player.Initialize(config);
+
+            return Player;
         }
     }
 }
