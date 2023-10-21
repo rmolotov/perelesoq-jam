@@ -1,5 +1,8 @@
+using System;
 using Metro.Gameplay.Conductor;
+using Metro.Infrastructure.Factories.Interfaces;
 using UnityEngine;
+using Zenject;
 
 namespace Metro.Gameplay.Train
 {
@@ -8,17 +11,46 @@ namespace Metro.Gameplay.Train
         [SerializeField] private Transform startModule;
         [SerializeField] private Transform endModule;
         
-        private ConductorMove _conductorMove;
+        [SerializeField] private float penaltyDistance = 0.5f;
+        
+        private ConductorController _conductor;
+        private IPlayerFactory _playerFactory;
 
-        public void Initialize(int length, ConductorMove conductor)
+        [Inject]
+        private void Construct(IPlayerFactory playerFactory)
         {
-            _conductorMove = conductor;
+            _playerFactory = playerFactory;
+        }
+        
+        public void Initialize(int length, ConductorController conductor)
+        {
+            _conductor = conductor;
             endModule.localPosition += length * Vector3.forward;
+        }
+
+        private void Update()
+        {
+            if (_playerFactory.Player != null && Vector3.Distance(_conductor.transform.position, _playerFactory.Player.transform.position) <= penaltyDistance)
+            {
+                Stop();
+            }
+
+            if (_playerFactory.Player != null && _playerFactory.Player.transform.position.z > endModule.transform.position.z)
+            {
+                _conductor.Stop(true);
+            }
         }
 
         public void Run()
         {
-            _conductorMove.Run();
+            _conductor.Run();
+            _playerFactory.Player.Run();
+        }
+
+        public void Stop()
+        {
+            _conductor.Stop();
+            _playerFactory.Player.Stop();
         }
     }
 }

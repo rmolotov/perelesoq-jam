@@ -31,39 +31,9 @@ namespace Metro.Meta.HUD
             // SetupStageProgressReactions(stageStaticData, stageProgressData);
         }
 
-        // private void SetupStageProgressReactions(LevelStaticData stageStaticData, StageProgressData stageProgressData)
-        // {
-        //     stageProgressData.EnemySpawners
-        //         .Select(sp => sp.enemiesRemainder)
-        //         .Zip()
-        //         .Where(r => r.All(rm => rm == 0))
-        //         .Subscribe(_ =>
-        //         {
-        //             SetupStageWindow(stageStaticData, WinText);
-        //         });
-        //     
-        //     stageProgressData.Hero
-        //         .OnDestroyAsObservable()
-        //         .Subscribe(_ =>
-        //         {
-        //             SetupStageWindow(stageStaticData, LoseText);
-        //         });
-        // }
-        //
+       
         private void SetupButtons() =>
             returnButton.onClick.AddListener(() => 
                 _stateMachine.Enter<LoadMetaState>());
-        //
-        // private void SetupHeroUI(GameObject hero) => 
-        //     heroUI.Initialize(hero.GetComponent<IHealth>(), false);
-        //
-        // private void SetupStageWindow(LevelStaticData stageStaticData, string text) =>
-        //     stagePopup
-        //         .InitAndShow(text, stageStaticData.Title)
-        //         .Then(toMenu =>
-        //         {
-        //             if (toMenu) _stateMachine.Enter<LoadMetaState>();
-        //             else _stateMachine.Enter<LoadLevelState, LevelStaticData>(stageStaticData);
-        //         });
     }
 }
